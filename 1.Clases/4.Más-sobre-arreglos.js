@@ -59,6 +59,7 @@ let cosas = [                               //-> Este es un arreglo que contiene
 console.log(cosas);
 //Para acceder a todos estos datos podemos hacer lo siguiente
 console.log(cosas[6]);
+
 console.log(cosas[6].a);
 console.log(cosas[6].b);
 console.log(cosas[7][2]);
