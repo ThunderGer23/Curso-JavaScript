@@ -1,0 +1,6 @@
+Esta practica tiene una duración de 6 horas pero podría alargarse
+en caso de dudas o eventos que no se contemplen, en primera instancia
+propongo iniciarla el Sábado 28 de Agosto a las 8:30pm
+
+Objetivo: Juego Blackjack
+Temas importantes a trarar: Manejo de Doom
