@@ -57,3 +57,15 @@ const Empleado = alumno(Alumno.name, Alumno.lastName, Alumno.age, Alumno.work);
 const {nombre, apellido, edad, trabajo} = alumno(Alumno.name, Alumno.lastName, Alumno.age, Alumno.work);
 console.log(Empleado);
 console.log(nombre);
+
+/*
+*   Adicional a esto también podemos agregar valores por
+*   defecto a los parametros de las funciones
+* */
+const Ejemplo = ({name = 'ThunderGer', age, work, address}) =>{
+    console.log({name});
+    console.log({age});
+    console.log({work});
+    console.log({address});
+}
+Ejemplo(Alumno);
