@@ -1,0 +1,10 @@
+.carta {
+    position: relative;
+    width: 150px;
+    margin-left: -100px;
+}
+
+#computadora-cartas,
+#jugador-cartas {
+    height: 250px;
+}
