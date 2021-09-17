@@ -13,11 +13,35 @@ const empleados = [
     }
 ];
 
-const getEmpleado = (id, callback) => {
-    const empleado = empleados.find(e => e.id === id);//?.nombre:algo
-    (empleado) ? callback(null, empleado) : callback(`Empleado ${id} no existe`);
-}
+const salarios = [
+    {
+        id:1,
+        salario: 1000
+    },
+    {
+        id:2,
+        salario: 3000
+    }
+];
 
-getEmpleado(2, (err, empleado) => {
-    console.log((err) ? `Error: ${err}`: empleado);
-});
+const getEmpleado = (id) => {
+    return new Promise((resolve, reject) => {
+        const empleado = empleados.find(e => e.id === id)?.nombre;
+        (empleado) ? resolve(empleado) : reject(`Empleado ${id} no existe`);
+    });
+};
+
+getEmpleado(1)
+    .then(empleado => console.log(empleado))
+    .catch(err => console.log(err))
+
+const getSalario = (id) => {
+    return new Promise((resolve, reject) => {
+        const salario = salarios.find(s => s.id === id)?.salario;
+        (salario) ? resolve(salario) : reject(`No existe salario para el: ${id}`);
+    });
+};
+
+getSalario(2)
+    .then(salario => console.log(salario))
+    .catch(err => console.log(err));
