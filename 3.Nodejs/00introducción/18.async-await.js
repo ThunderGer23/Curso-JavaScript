@@ -1,3 +1,10 @@
+/*          Ansyc y Await
+* Estos siempre van de la mano con las
+* promesas pues su trabajo principal es
+* decirle al programa que debe esperar
+* la respuesta de una promesa.
+* */
+
 const empleados = [
     {
         id: 1,
@@ -31,11 +38,6 @@ const getEmpleado = (id) => {
     });
 };
 
-//1
-getEmpleado(1)
-    .then(empleado => console.log(empleado))
-    .catch(err => console.log(err))
-
 const getSalario = (id) => {
     return new Promise((resolve, reject) => {
         const salario = salarios.find(s => s.id === id)?.salario;
@@ -43,20 +45,21 @@ const getSalario = (id) => {
     });
 };
 
-//2
-getSalario(5)
-    .then(salario => console.log(salario))
-    .catch(err => console.log(err));
+/***************************************************************/
+const id= 1;
+const getInfoUsuario = async (id) => {
+    try {
+        const empleado = await getEmpleado(id);
+        const salario = await getSalario(id);
+        return `El salario del empleado: ${empleado} es de: ${salario}`
+    }catch (e) {
+        throw e;
+    }
+}
 
-//Concatenación de promesas
-
-let id = 1;
-getEmpleado(3)
-    .then(empleado => {
-    nombre = empleado;
-    return getSalario(id);
+getInfoUsuario(id).then(msg =>{
+    console.log(msg);
+}).catch(err =>{
+    console.log(err);
 })
-    .then(
-        salario => console.log(`El empleado: ${nombre} tiene un salario: ${salario}`)
-    )
-    .catch(err => console.error(err));
+/***************************************************************/

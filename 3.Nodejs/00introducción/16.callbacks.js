@@ -1,8 +1,8 @@
 /*          Callbacks
 *
 * Los callbacks no son más que funciones
-* que se van a ejecutar después, en cierto
-* tiempo determinado.
+* que se van a mandar como parametro ejecutar
+* después, en cierto tiempo determinado.
 *
 * */
 
@@ -63,11 +63,11 @@ const empleados = [
     }
 ];
 
-const getEmpleado = (id, callback) => {
-    const empleado = empleados.find(e => e.id === id);//?.nombre:algo
-    (empleado) ? callback(null, empleado) : callback(`Empleado ${id} no existe`);
+const getEmpleado = (id, c) => {
+    const em = empleados.find(e=>e.id === id);//?.nombre;
+    (em) ? c(null, em) : c(`Empleado ${id} no existe`);
 }
 
-getEmpleado(2, (err, empleado) => {
+getEmpleado(3, (err, empleado) => {
     console.log((err) ? `Error: ${err}`: empleado);
 });
